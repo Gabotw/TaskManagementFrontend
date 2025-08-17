@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {SignUpEmployeeComponent} from './iam/pages/sign-up-employee/sign-up-employee.component';
 import {SignUpAdminComponent} from './iam/pages/sign-up-admin/sign-up-admin.component';
 import {ChooseRoleComponent} from './iam/pages/choose-role/choose-role.component';
 import {SignInComponent} from './iam/pages/sign-in/sign-in.component';
@@ -9,6 +8,7 @@ import {HomeEmployeeComponent} from './public/pages/home-employee/home-employee.
 import {HomeAdminComponent} from './public/pages/home-admin/home-admin.component';
 import {TaskListAdminComponent} from './management/component/task-list/task-list-admin.component';
 import {TaskListEmployeeComponent} from './management/component/task-list-employee/task-list-employee.component';
+import {SignUpEmployeeComponent} from './iam/pages/sign-up-employee/sign-up-employee.component';
 
 const routes: Routes = [
   { path: 'sign-in', component: SignInComponent},

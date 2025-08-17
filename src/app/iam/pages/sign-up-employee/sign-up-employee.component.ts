@@ -16,23 +16,19 @@ import {NotificationService} from '../../../public/services/notification.service
 export class SignUpEmployeeComponent {
   username: string = '';
   password: string = '';
-  constructor(private router: Router, private authService: AuthenticationService, private notificationService: NotificationService) {
-    this.authService.signOut();
-  }
+  constructor(private router: Router, private authService: AuthenticationService, private notificationService: NotificationService,) {}
 
   navigateTo(route: string) {
     this.router.navigate([`/${route}`]);
   }
 
   signUp() {
-    if (this.username && this.password) {
-      const signUpRequest = new SignUpRequest(
-        this.username,
-        this.password,
-        ['EMPLOYEE'],
-      );
-      this.authService.signUp(signUpRequest);
-      this.notificationService.success('Tu cuenta como empleado ha sido creada exitosamente. Ahora puedes iniciar sesión.');
-    }
+    const signUpRequest = new SignUpRequest(
+      this.username,
+      this.password,
+      ['EMPLOYEE'],
+    );
+    this.authService.signUp(signUpRequest);
+    this.notificationService.success('Tu cuenta como empleado ha sido creada exitosamente. Ahora puedes iniciar sesión.');
   }
 }
