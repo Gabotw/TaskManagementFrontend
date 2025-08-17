@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthenticationService } from '../../services/authentication.service';
 import { SignUpRequest } from '../../model/sign-up.request';
 import {FormsModule} from '@angular/forms';
+import {NotificationService} from '../../../public/services/notification.service';
 
 @Component({
   selector: 'app-sign-up-admin',
@@ -15,7 +16,7 @@ import {FormsModule} from '@angular/forms';
 export class SignUpAdminComponent {
   username: string = '';
   password: string = '';
-  constructor(private router: Router, private authService: AuthenticationService) {}
+  constructor(private router: Router, private authService: AuthenticationService, private notificationService: NotificationService,) {}
 
   navigateTo(route: string) {
     this.router.navigate([`/${route}`]);
@@ -28,5 +29,6 @@ export class SignUpAdminComponent {
       ['ADMIN'],
     );
     this.authService.signUp(signUpRequest);
+    this.notificationService.success('Tu cuenta como administrador ha sido creada exitosamente. Ahora puedes iniciar sesión.');
   }
 }

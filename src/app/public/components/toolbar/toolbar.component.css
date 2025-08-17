@@ -1,0 +1,46 @@
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  background-color: #d4e6fd;
+}
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+.app-logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+.product-name {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.greeting {
+  font-size: 1rem;
+  margin-right: 8px;
+}
+
+.logout-btn {
+  background-color: #d4e6fd;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #8ebfff;
+}

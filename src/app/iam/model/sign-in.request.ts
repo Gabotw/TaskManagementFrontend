@@ -1,4 +1,3 @@
-// Class to hold the log in request data
 
 export class SignInRequest {
   public username: string;

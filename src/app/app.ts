@@ -17,10 +17,8 @@ export class App {
   }
   shouldShowToolbar(){
     return !(this.router.url == '/sign-up' || this.router.url == '/sign-in'
-      || this.router.url == '/choose-role' || this.router.url == '/successful'
       || this.router.url == '/sign-up-admin' || this.router.url == '/sign-up-employee'
-      || this.router.url == '/forgot-password' || this.router.url == '/for-lawyers'
-      || this.router.url == '/add-specialization-and-price');
+      || this.router.url == '/choose-role' || this.router.url == '/page-not-found');
   }
   shouldShowFooter(){
     return this.router.url !== '/sign-up' && this.router.url !== '/sign-in';

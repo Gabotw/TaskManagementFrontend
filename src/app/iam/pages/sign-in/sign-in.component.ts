@@ -4,6 +4,9 @@ import { AuthenticationService } from '../../services/authentication.service';
 import { SignInRequest } from '../../model/sign-in.request';
 import {FormsModule} from '@angular/forms';
 import {NgIf} from '@angular/common';
+import {SignInResponse} from '../../model/sign-in.response';
+import {HttpErrorResponse} from '@angular/common/http';
+import {NotificationService} from '../../../public/services/notification.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -20,7 +23,7 @@ export class SignInComponent {
   errorMessage: string = '';
   isLoading: boolean = false;
 
-  constructor(private router: Router, private authService: AuthenticationService) {
+  constructor(private router: Router, private authService: AuthenticationService, private notificationService: NotificationService) {
     this.authService.signOut();
   }
 
@@ -30,14 +33,14 @@ export class SignInComponent {
 
     const signInRequest = new SignInRequest(this.username, this.password);
 
-    // Simplemente llama al servicio sin suscribirse
-    this.authService.signIn(signInRequest);
-
-    // Escucha los cambios del estado de autenticación
-    this.authService.isSignedIn.subscribe(isSignedIn => {
-      this.isLoading = false;
-      if (!isSignedIn && this.username && this.password) {
-        this.errorMessage = 'Esta cuenta no existe o la contraseña es incorrecta';
+    this.authService.signIn(signInRequest).subscribe({
+      next: (response: SignInResponse) => {
+        this.isLoading = false;
+        this.notificationService.success('¡Inicio de sesión exitoso!');
+      },
+      error: (error: HttpErrorResponse) => {
+        this.isLoading = false;
+        this.notificationService.error('Esta cuenta no existe o la contraseña es incorrecta');
       }
     });
   }

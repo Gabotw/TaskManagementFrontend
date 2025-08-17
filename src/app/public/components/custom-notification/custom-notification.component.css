@@ -1,0 +1,73 @@
+.notification-container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+  position: relative;
+  min-width: 300px;
+  max-width: 400px;
+  padding-bottom: 12px;
+}
+
+.notification-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  gap: 10px;
+  color: white;
+  font-weight: 500;
+}
+
+.success .notification-header {
+  background: linear-gradient(135deg, #43a047, #2e7d32);
+}
+
+.error .notification-header {
+  background: linear-gradient(135deg, #e53935, #c62828);
+}
+
+.notification-icon {
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.notification-message {
+  padding: 12px 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #fafafa;
+  margin-right: 40px;
+}
+
+.close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: white;
+}
+::ng-deep .mat-mdc-snack-bar-label.mdc-snackbar__label {
+  background-color: transparent !important;
+  padding: 0 !important;
+}
+
+::ng-deep .mat-mdc-snack-bar-container .mdc-snackbar__surface {
+  background-color: white !important;
+  border: none !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15) !important;
+  border-radius: 8px !important;
+}
+
+.notification-container {
+  background-color: white !important;
+}
+
+.notification-message {
+  color: #333333 !important;
+}
+
+.notification-header {
+  color: white !important;
+}
+

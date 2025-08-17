@@ -1,0 +1,47 @@
+.dialog-container {
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #4568dc, #b06ab3);
+  color: white;
+  gap: 12px;
+}
+
+.header-icon {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.dialog-message {
+  margin: 20px 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  text-align: center;
+}
+
+.dialog-footer {
+  padding: 16px 24px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  background-color: #f8f9fc;
+  border-top: 1px solid #eaedf5;
+}
+
+.cancel-btn {
+  color: #666;
+}
+
+.confirm-btn {
+  background: linear-gradient(135deg, #4568dc, #b06ab3);
+  color: white;
+}

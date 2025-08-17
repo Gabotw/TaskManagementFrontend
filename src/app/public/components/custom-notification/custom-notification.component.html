@@ -1,0 +1,10 @@
+<div class="notification-container" [ngClass]="data.type">
+  <div class="notification-header">
+    <mat-icon class="notification-icon">{{ getIcon() }}</mat-icon>
+    <span>{{ data.title }}</span>
+  </div>
+  <div class="notification-message">{{ data.message }}</div>
+  <button mat-icon-button class="close-button" (click)="close()">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>

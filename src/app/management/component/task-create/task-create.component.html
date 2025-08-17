@@ -1,0 +1,81 @@
+<div class="dialog-container">
+  <div class="dialog-header">
+    <mat-icon class="header-icon">assignment_add</mat-icon>
+    <h2 mat-dialog-title>Nueva Tarea</h2>
+  </div>
+
+  <div mat-dialog-content>
+    <div class="form-content">
+      <div class="section-divider">
+        <div class="divider-line"></div>
+        <div class="section-title">
+          <mat-icon>description</mat-icon>
+          <span>Información Básica</span>
+        </div>
+        <div class="divider-line"></div>
+      </div>
+
+      <form [formGroup]="taskForm">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>
+            <span class="label-content">
+              <mat-icon class="label-icon">label</mat-icon>
+              Título de la tarea
+            </span>
+          </mat-label>
+          <input matInput formControlName="title" placeholder="Ej: Revisar reporte mensual">
+          <mat-icon matSuffix>title</mat-icon>
+          <mat-error *ngIf="taskForm.get('title')?.invalid">El título es obligatorio</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>
+            <span class="label-content">
+              <mat-icon class="label-icon">subject</mat-icon>
+              Descripción detallada
+            </span>
+          </mat-label>
+          <textarea matInput formControlName="description" rows="3" placeholder="Explique los detalles y objetivos de esta tarea"></textarea>
+          <mat-icon matSuffix>notes</mat-icon>
+          <mat-error *ngIf="taskForm.get('description')?.invalid">La descripción es obligatoria</mat-error>
+        </mat-form-field>
+
+        <div class="section-divider">
+          <div class="divider-line"></div>
+          <div class="section-title">
+            <mat-icon>person</mat-icon>
+            <span>Responsable</span>
+          </div>
+          <div class="divider-line"></div>
+        </div>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>
+            <span class="label-content">
+              <mat-icon class="label-icon">assignment_ind</mat-icon>
+              Asignar empleado
+            </span>
+          </mat-label>
+          <mat-select formControlName="assignedTo">
+            <mat-option *ngFor="let employee of employees" [value]="employee.id">
+              {{ employee.username }}
+            </mat-option>
+          </mat-select>
+          <mat-icon matSuffix>arrow_drop_down</mat-icon>
+          <mat-error *ngIf="taskForm.get('assignedTo')?.invalid">Debe asignar la tarea a un empleado</mat-error>
+        </mat-form-field>
+      </form>
+    </div>
+  </div>
+
+  <div class="dialog-footer">
+    <button mat-button class="cancel-btn" (click)="onCancel()">
+      <mat-icon>close</mat-icon>
+      Cancelar
+    </button>
+    <button mat-raised-button (click)="onSubmit()" [disabled]="taskForm.invalid" class="submit-btn">
+      <mat-icon>add_task</mat-icon>
+      Crear tarea
+    </button>
+  </div>
+</div>

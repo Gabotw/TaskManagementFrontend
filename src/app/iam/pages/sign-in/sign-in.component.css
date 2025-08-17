@@ -1,13 +1,38 @@
 .sign-in-container {
   width: 420px;
   margin: 60px auto;
-  padding: 2.5rem;
+  padding: 3rem 2.5rem; /* Aumentado el padding vertical */
   text-align: center;
   background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.05);
   position: relative;
   overflow: hidden;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin: 1rem 0 2rem;
+  padding: 0.5rem 0;
+  line-height: 1.2;
+  font-weight: 700;
+  background: linear-gradient(90deg, #7ab3fb, #5ea2fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #66a6f4, #5ea2fb);
+  border-radius: 2px;
 }
 
 .sign-in-container::before {
@@ -17,7 +42,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #b82121, #e74c3c);
+  background: linear-gradient(90deg, #d4e6fd, #5ea2fb);
 }
 
 .signup-text {
@@ -31,29 +56,6 @@
   display: inline;
   margin: 0;
   margin-left: 0.3rem;
-}
-
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, #b82121, #e74c3c);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  position: relative;
-}
-
-h1::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, #b82121, #e74c3c);
-  border-radius: 2px;
 }
 
 form {
@@ -75,7 +77,7 @@ input {
 
 input:focus {
   outline: none;
-  border-color: #b82121;
+  border-color: #000000;
   box-shadow: 0 0 0 3px rgba(184, 33, 33, 0.1);
   transform: translateY(-1px);
 }
@@ -87,7 +89,7 @@ input::placeholder {
 button {
   padding: 1rem 1.5rem;
   border: none;
-  background: linear-gradient(135deg, #b82121, #e74c3c);
+  background: linear-gradient(90deg, #9bc3f6, #5ea2fb);
   color: white;
   font-size: 1.1rem;
   font-weight: 600;
@@ -116,7 +118,7 @@ button:hover::before {
 
 button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(184, 33, 33, 0.3);
+  box-shadow: 0 8px 20px rgba(48, 202, 250, 0.3);
 }
 
 button:active {
@@ -124,7 +126,7 @@ button:active {
 }
 
 .blue-link {
-  color: #b82121;
+  color: #539fff;
   text-decoration: none;
   font-size: 0.9rem;
   display: block;
@@ -134,7 +136,7 @@ button:active {
 }
 
 .blue-link:hover {
-  color: #e74c3c;
+  color: #2541f6;
   transform: translateY(-1px);
 }
 
@@ -154,15 +156,14 @@ a:hover {
 
 a span {
   font-weight: 600;
-  color: #b82121;
+  color: #2f6bff;
   transition: color 0.3s ease;
 }
 
 a:hover span {
-  color: #e74c3c;
+  color: #4369fd;
 }
 
-/* Responsive design */
 @media (max-width: 480px) {
   .sign-in-container {
     width: 90%;
