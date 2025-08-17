@@ -45,6 +45,7 @@ export class TaskListAdminComponent implements OnInit, AfterViewInit {
       this.loadAllTasks();
     }, 500);
   }
+
   sortData(column: string): void {
     if (this.sortColumn === column) {
       this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
@@ -68,21 +69,7 @@ export class TaskListAdminComponent implements OnInit, AfterViewInit {
         : (valueA > valueB ? -1 : 1);
     });
   }
-  applyFilterByColumn(event: Event, column: string): void {
-    const filterValue = (event.target as HTMLInputElement).value.trim().toLowerCase();
-    this.columnFilters[column] = filterValue;
-    this.applyFilters();
-  }
 
-  filterByStatus(event: any): void {
-    const value = event.value;
-    if (value === '') {
-      delete this.columnFilters['isCompleted'];
-    } else {
-      this.columnFilters['isCompleted'] = value;
-    }
-    this.applyFilters();
-  }
   private getPropertyValue(task: Task, column: string): any {
     if (column === 'userId') {
       return this.getUserName(task.userId);
@@ -97,6 +84,7 @@ export class TaskListAdminComponent implements OnInit, AfterViewInit {
       default: return '';
     }
   }
+
   filterByTaskType(type: 'all' | 'pending' | 'completed'): void {
     delete this.columnFilters['isCompleted'];
 
