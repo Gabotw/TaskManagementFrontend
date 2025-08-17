@@ -1,4 +1,3 @@
-// src/app/public/components/confirm-dialog/confirm-dialog.component.ts
 import { Component, Inject } from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogContent, MatDialogRef, MatDialogTitle} from '@angular/material/dialog';
 import {MatButton} from '@angular/material/button';

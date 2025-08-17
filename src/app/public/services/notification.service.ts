@@ -1,4 +1,3 @@
-// src/app/public/services/notification.service.ts
 import { Injectable } from '@angular/core';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 import { CustomNotificationComponent } from '../components/custom-notification/custom-notification.component';

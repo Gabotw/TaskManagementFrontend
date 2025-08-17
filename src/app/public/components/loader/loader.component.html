@@ -1,4 +1,6 @@
-
-<div *ngIf="isLoading" class="loader-container" [class.overlay]="overlay">
-  <mat-spinner [diameter]="diameter" color="accent"></mat-spinner>
+<div class="loader-overlay" *ngIf="loading">
+  <div class="loader-container">
+    <mat-spinner diameter="50"></mat-spinner>
+    <p class="loading-text">Cargando...</p>
+  </div>
 </div>

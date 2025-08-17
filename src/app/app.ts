@@ -8,7 +8,7 @@ import {Router} from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
-  title = 'LawConnect';
+  title = 'Gestor de Tareas';
   options = [
     { path: '/home', title: 'Home'},
   ]
