@@ -328,12 +328,14 @@ mat-dialog-title {
   padding: 12px 8px !important;
   box-shadow: 0 10px 30px rgba(69, 104, 220, 0.2) !important;
   border: 2px solid rgba(69, 104, 220, 0.1) !important;
-  max-height: 300px !important;
+  max-height: none !important;
+  overflow-y: auto !important;
 }
 
 ::ng-deep .mdc-menu-surface {
-  overflow: hidden !important;
+  overflow: auto !important;
   animation: panelFadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  max-height: 300px !important;
 }
 
 @keyframes panelFadeIn {
