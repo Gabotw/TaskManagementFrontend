@@ -142,7 +142,6 @@ button:active {
 }
 
 .role-option:first-of-type::after {
-  content: '👤';
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
@@ -151,7 +150,6 @@ button:active {
 }
 
 .role-option:last-of-type::after {
-  content: '👑';
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
