@@ -1,3 +1,3 @@
 export const environment = {
-  serverBasePath: 'http://localhost:5298/api/v1'
+  serverBasePath: 'https://taskapi1.azurewebsites.net/api/v1',
 };
