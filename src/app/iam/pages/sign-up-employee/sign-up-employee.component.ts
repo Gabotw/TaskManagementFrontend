@@ -28,7 +28,21 @@ export class SignUpEmployeeComponent {
       this.password,
       ['EMPLOYEE'],
     );
-    this.authService.signUp(signUpRequest);
-    this.notificationService.success('Tu cuenta como empleado ha sido creada exitosamente. Ahora puedes iniciar sesión.');
+
+    this.authService.signUp(signUpRequest).subscribe({
+      next: () => {
+        this.notificationService.success('Tu cuenta como empleado ha sido creada exitosamente. Ahora puedes iniciar sesión.');
+        this.router.navigate(['/sign-in']);
+      },
+      error: (error) => {
+        if (error.status === 409 ||
+          (error.error && error.error.message && error.error.message.includes('existe')) ||
+          (typeof error.error === 'string' && error.error.includes('username'))) {
+          this.notificationService.error('Este nombre de usuario ya está en uso. Por favor, elige otro.');
+        } else {
+          this.notificationService.error('Este nombre de usuario ya está en uso. Por favor, elige otro.');
+        }
+      }
+    });
   }
 }

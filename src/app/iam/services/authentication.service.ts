@@ -70,21 +70,12 @@ export class AuthenticationService {
     return this.signedInUserRole.asObservable();
   }
 
-  signUp(signUpRequest: SignUpRequest) {
-    this.http
-      .post<SignUpResponse>(
+  signUp(signUpRequest: SignUpRequest):Observable<SignUpResponse> {
+    return this.http.post<SignUpResponse>(
         `${this.basePath}/authentication/sign-up`,
         signUpRequest,
         this.httpOptions
-      )
-      .subscribe({
-        next: (response) => {
-          this.router.navigate(['/sign-in']).then();
-        },
-        error: () => {
-          this.router.navigate(['/sign-up']);
-        },
-      });
+      );
   }
 
 
